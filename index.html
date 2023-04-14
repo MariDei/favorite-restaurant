@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=https://www.creativosonline.org/uk/HTML-меню-CSS.html, initial-scale=1.0">
+    <title>Favorite Restaurant 👩‍🍳 </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">       
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+    crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/f99346d953.js" crossorigin="anonymous"></script>  
+</head>
+<style>
+
+html,
+body {
+    overflow-x: hidden;
+}  
+
+body {
+    font-family:'Nunito Sans', sans-serif;
+    position:relative;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    color: #43291b;
+    background-color: #fdfbf8;
+}
+
+.container {
+    display: block;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.container p {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+[href] {
+    color:  #fdfbf8;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+/*Burger-Menu*/
+.menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 25px;
+}
+.menu span {
+    margin: 0 auto;
+    position: relative;
+    top: 12px;
+}
+
+.menu span:before, .menu span:after {
+    position: absolute;
+    content: '';
+}
+.menu span, .menu span:before, .menu span:after {
+    width: 30px;
+    height: 6px;
+    background-color: #43291b;
+    display: block;
+}
+.menu span:before {
+    margin-top: -12px;
+}
+.menu span:after {
+    margin-top: 12px;
+}
+
+/*Fake-Trigger*/
+#sized {
+    width: 10px;
+    height: 10px;
+    color:transparent;
+    background-color: transparent;
+    border: transparent;
+}
+
+/*Modal-Box*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding:0.5%;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 98vh;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color:  #43291b;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:  #43291b;
+    border-bottom: none;
+    height: 200px;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    background-color: #43291b;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    color:  #fdfbf8;
+    font-size: 24px;
+    font-weight: 500;
+    border-top: none;
+}
+
+.footer-contact {
+    margin: 0 600px;
+}
+
+.address:hover, 
+.tel:hover,
+.address:focus, 
+.tel:focus {
+    color:bisque;
+    font-weight: 700;
+}
+
+.facebook-link,
+.insta-link {
+    font-size: 24px;
+}
+
+.github-link {
+    font-size: 18px;
+}
+
+.facebook-link:hover,
+.insta-link:hover,
+.facebook-link:focus,
+.insta-link:focus {
+     color: bisque;
+     font-size: 26px;
+}
+
+.github-link:hover,
+.github-link:focus {
+    color: bisque;
+    font-size: 22px;
+}
+
+.close {
+    margin-top: 5px 0;
+    color:  #fdfbf8;
+    font-size: 50px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+    color:  bisque;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Hero-Container*/
+.hero-title {
+    color: #43291b;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.hero-text {
+    color: #43291b;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 2fr);
+    grid-gap: 2px;
+    padding: 50px 15px 30px 15px;
+}
+
+.hero-grid img:hover {
+    transform: scale(1.5);
+    position: relative;
+}
+
+.quote {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: end;
+    margin: 20 25px 0 10px;
+    padding: 10px 10px;
+}
+
+/*Container-About&Container-Menu*/
+.container-about {
+    background-color: #43291b;
+    color:  #fdfbf8;
+}
+
+.title-about,
+.title-menu {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 50px 10px 10px 10px;
+    padding: 50px 10px;
+    text-align: center;
+}
+
+span {
+    text-transform: lowercase;
+}
+
+.text-about,
+.text-menu {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px 25px;
+    text-align: left ;
+}
+.grid-about,
+.grid-menu {
+    display: block;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 2px;
+    padding: 50px 50px;
+}
+
+.grid-about img:hover,
+.grid-menu img:hover{
+    transform: scale(1.5);
+    position: relative;
+}
+
+.container-menu {
+    background-color: #fdfbf8; 
+    color: #43291b;
+}
+
+.text-menu {
+    padding: 0 25px;
+}
+
+li {
+    margin: 0 25px;
+}
+
+.link-menu {
+    color: #43291b;
+    font-weight: 600;
+}
+
+.link-menu:hover {
+    color: #43291b;
+    font-size: 24px;
+}
+
+/*Footer*/
+footer {
+    background-color: #43291b;
+    color: #fdfbf8;
+}
+
+.about-me, 
+.about-landing-page {
+    font-size: 14px;
+}
+
+.about-me h2, 
+.about-landing-page h2 {
+    font-size: 16px;
+}
+
+
+
+
+
+
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+.animated {
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/*Navigation Inner Styling*/
+.nav ul li a:hover{
+    text-decoration: none;
+    color: bisque;
+}
+
+.nav ul li a{
+    padding:1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:3vw;
+    letter-spacing: -0.05em;
+}
+
+.nav ul li{
+    display: inline-block;
+    font-size: 48px;
+}
+
+.nav ul{
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+
+/*Mobile Optimization*/
+/*Landscape-Phone Downwards*/
+@media (max-width: 480px) {
+
+    .nav ul li{
+        display: block;
+        height:38px;
+    }
+
+    .nav ul {
+        clear: both;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav ul li a {
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 10vw;
+        letter-spacing: -0.05em;
+    }
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 18px;
+    }
+
+    .hero-grid {
+        grid-template-columns: repeat(2, 2fr);
+        padding: 20px 15px 0 15px;
+    }
+
+    .hero-grid img {
+        height: 180px;
+        width: 175px;
+    }
+
+    .hero-grid img:hover {
+        transform: scale(1.5);
+        position: relative;
+    }
+
+    .quote {
+        font-size: 20px;
+    } 
+
+    .grid-about,
+    .grid-menu {
+        grid-template-columns: repeat(4, 4fr);
+        padding: 30px 30px;
+    }
+
+    .grid-about img,
+    .grid-menu img {
+        height: 150px;
+        width: 175px; 
+    }
+
+    .title-about {
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .text-about,
+    .text-menu {
+        font-size: 16px;
+        margin: 5px 10px;
+        text-align: left;
+    }  
+
+    .grid-about,
+    .grid-menu {
+        padding: 30px 10px;
+    }
+
+    .col-6 {
+        width: 470px;
+    }
+
+    .title-menu {
+        margin: 20px 0 5px 0;
+        padding: 0;        
+    }
+
+    .text-menu {
+        font-size: 16px;
+        padding: 5px 0px;
+        text-align: left;
+    }
+
+    .grid-menu {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-contact {
+        color: #fdfbf8;
+        margin: 0 600px;
+    }
+
+    .address:hover, 
+    .tel:hover,
+    .address:focus, 
+    .tel:focus {
+        color:bisque;
+        font-weight: 700;
+    }
+
+    .facebook-link,
+    .insta-link {
+        font-size: 20px;
+    }
+
+    .facebook-link:hover,
+    .insta-link:hover,
+    .facebook-link:focus,
+    .insta-link:focus {
+        color: bisque;
+        font-size: 26px;
+    }
+}
+</style>
+<body>
+  <header>
+    <div class=container>
+      <h1>TOUCH ME, TASTE ME</h1>
+      <p>Open Me, Close Me, Resize Me</p>
+    </div> 
+    <div class="navigation">
+    <button id="sized" class="menu">
+      <span></span>        
+    </button>
+    <div id="myModal" class="modal">     
+    <!-- Modal content -->
+      <div class="modal-content animated zoomIn">
+      <div class="modal-header">
+         <span class="close">×</span>
+    </div>        
+      <div class="modal-body nav">
+        <ul>
+          <li><a href="#about-restaurant">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="https://www.100rokiv.com.ua/book">Reservation</a></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <p class="footer-contact"> 
+          KYIV
+          <br/> 
+          <a class="address" href="https://www.google.com/maps/place/100+років+тому+вперед/@50.4572536,30.5174259,18.36z/data=!4m5!3m4!1s0x40d4cf8c87029aff:0x7cfd86b86402e618!8m2!3d50.4020355!4d30.5326906?shorturl=1">4 Volodymyrska Street</a>
+          <br/>
+          <a class="tel" href="tel:+380680686975">+38 068 068 69 75</a> 
+          <br/>     
+          <a 
+            href="https://www.facebook.com/100rokivtomuvpered"
+            target="_blank"
+            title="100 ROKIV TOMU VPERED facebook"
+            ><i class="fa-brands fa-facebook facebook-link"></i></a>
+          <a 
+            href="https://www.instagram.com/100rokivtomuvpered/"
+            target="_blank"
+            title="100 ROKIV TOMU VPERED instagram"
+            ><i class="fa-brands fa-instagram insta-link"></i></a>
+        </p>
+      </div>      
+  </header>
+  <main>
+	<div class="hero-container">
+	  <h1 class="hero-title">
+        <strong>
+          100 ROKIV TOMU VPERED 
+        </strong>     
+	  </h1>
+      <p class="hero-text">
+        RESTAURANT OF UKRAINIAN CUSINE
+      </p>
+      <div class="grid hero-grid">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/503/original/IMG_0217.jpg?1681239903" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/496/original/IMG_0206.jpg?1681239631" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/501/original/IMG_0213.jpg?1681239843" 
+          height="200"
+          width="200"
+          alt="" />
+        <img class="d-none d-lg-block" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/497/original/IMG_0207.jpg?1681239668" 
+          height="200"
+          width="200"
+          alt="" />
+        <img class="d-none d-lg-block" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/506/original/IMG_0220.jpg?1681240008" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/504/original/IMG_0218.jpg?1681239940" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/495/original/IMG_0205.jpg?1681239589" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/502/original/IMG_0214.jpg?1681239874" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/498/original/IMG_0208.jpg?1681239706" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/507/original/IMG_0221.jpg?1681240039" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/500/original/IMG_0212.jpg?1681239806" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/630/original/IMG_0230.jpg?1681290002" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/511/original/IMG_0235.jpg?1681240133" 
+          height="200"
+          width="200"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/499/original/IMG_0210.jpg?1681239757" 
+          height="200"
+          width="200"
+          alt="" />
+      </div>    
+      <p class="quote">Ukrainian cuisine without stereotypes...</p>  
+    </div>
+    <div class="container-about">
+      <div class="row">
+        <div class="col-6">
+        <div class="grid grid-about">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/761/original/image.jpg?1681331190" 
+          height="200"
+          width="300"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/759/original/IMG_9987-600x427.jpg?1681331085" 
+          height="200"
+          width="300"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/745/original/IMG_0191.JPG?1681329643" 
+          height="250"
+          width="200"
+          alt="" />
+         <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/746/original/IMG_0192.JPG?1681329707" 
+          height="250"
+          width="400"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/762/original/redroom.jpg?1681331428" 
+          height="250"
+          width="400"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/754/original/IMG_0196.JPG?1681330110" 
+          height="250"
+          width="200"
+          alt="" />    
+        </div>  
+        </div>
+        <div class="col-6">
+          <h1 id="about-restaurant" class="title-about" >
+            ABOUT RESTAURANT 
+          </h1> 
+          <p class="text-about">
+            <strong>"100 ROKIV TOMU VPERED"<span> IS A FUNDAMENTALLY NEW FORM OF UKRAINIAN CUISINE WITH ITS OWN SUPERFOODS, AMAZING RECIPES AND RECONSIDERED TRADITIONS.</span></strong> 
+            <br/>
+            Opened on March 21, 2019 by Inna Popereshniuk and Yevhen Klopotenko, who is the chef of the establishment.
+            The restaurant is located in Kyiv in a historic building on Volodymyrska Street, not far from the Church of the Tithe and Andriyivsky Uzviz.
+            <br/>
+            In the fall of 2020, "NV" magazine named one of the 100 best restaurants in Ukraine. In 2020 and 2021, the establishment became a finalist of 
+            the "Salt" restaurant award among restaurants of Ukrainian cuisine.
+            <br/>
+            The design of the restaurant reflects its main goal: to nurture love for traditional Ukrainian cuisine with the help of a modern and creative approach.
+          </p>  
+          <p class="quote">
+            The kitchen is the heart of restaurant...
+            <br/>
+            People are souls...
+          </p>
+        </div>
+      </div>        
+    </div>
+    <div class="container-menu">
+      <div class="row">
+        <div class="col-6">
+          <h1 id="menu" class="title-menu" >
+            MENU 
+          </h1> 
+          <p class="text-menu">
+            The restaurant's menu consists of two parts, the first is authentic Ukrainian dishes (the part that represents the first part of our restaurant's 
+            name: "100 ROKIV TOMU" and the second is comfort food, which is associated with the other part of the name: "TOMU VPERED". 
+            <br/>
+            Thus, we are now developing two formats.
+            <br/>
+            We invest every day in our dishes to show what modern Ukraine was and can be - honest, brave, interesting and incredibly tasty.
+            Choose dishes from the menu below to see for yourself.
+            <ul class="text-menu">
+              <li >
+                <a class="link-menu" href="https://www.100rokiv.com.ua/_next/static/media/menu-breakfast.6acc1c08.pdf">Breakfast menu</a>
+              </li>
+              <li>
+                <a class="link-menu" href="https://www.100rokiv.com.ua/_next/static/media/menu-main.c678347d.pdf">Set menu from chef Evgeny Klopotenko</a>
+              </li>
+              <li>
+                <a class="link-menu" href="https://www.100rokiv.com.ua/_next/static/media/menu-vegeterian.4e7a1c90.pdf">Vegetarian menu</a>
+              </li>
+              <li>
+                <a class="link-menu" href="https://www.100rokiv.com.ua/_next/static/media/menu-wine.7fffeddf.pdf">Vine card</a>
+              </li>
+              <li>
+                <a class="link-menu" href="https://www.100rokiv.com.ua/_next/static/media/menu-bar.7f33259e.pdf">Bar menu</a>
+              </li>
+            </ul>
+          </p>  
+          <p class="quote">
+            Every dish has a story...
+          </p>
+        </div>
+        <div class="col-6">
+        <div class="grid grid-menu">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/139/original/IMG_0366.JPG?1681512108" 
+          height="200"
+          width="300"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/140/original/IMG_0367.JPG?1681512188" 
+          height="200"
+          width="300"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/112/original/IMG_0343.jpg?1681508623" 
+          height="250"
+          width="200"
+          alt="" />
+         <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/138/original/IMG_0363.JPG?1681512059" 
+          height="250"
+          width="400"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/129/original/IMG_0351.jpg?1681510491" 
+          height="250"
+          width="400"
+          alt="" />
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/117/original/IMG_0352.jpg?1681508961" 
+          height="250"
+          width="200"
+          alt="" />    
+        </div>  
+        </div>
+      </div>        
+    </div>
+  </main>
+  <footer> 
+    <div class="footer-contact">
+      <p>
+          KYIV
+          <br/> 
+          <a class="address" href="https://www.google.com/maps/place/100+років+тому+вперед/@50.4572536,30.5174259,18.36z/data=!4m5!3m4!1s0x40d4cf8c87029aff:0x7cfd86b86402e618!8m2!3d50.4020355!4d30.5326906?shorturl=1">4 Volodymyrska Street</a>
+          <br/>
+          <a class="tel" href="tel:+380680686975">+38 068 068 69 75</a> 
+          <br/>     
+          <a 
+            href="https://www.facebook.com/100rokivtomuvpered"
+            target="_blank"
+            title="100 ROKIV TOMU VPERED facebook"
+            ><i class="fa-brands fa-facebook facebook-link"></i></a>
+          <a 
+            href="https://www.instagram.com/100rokivtomuvpered/"
+            target="_blank"
+            title="100 ROKIV TOMU VPERED instagram"
+            ><i class="fa-brands fa-instagram insta-link"></i></a>
+      </p>      
+    </div>      
+    <div class="row">
+      <div class="col text-left about-me">
+        <h2><strong>About me</strong></h2>
+        <p>
+          My name is Marianna Dei.
+          I designed &amp; built this landing page for SheCodes Challenge about my favorite Ukrainian restaraunt.
+        </p>
+      </div>  
+      <div class="col text-left about-landing-page">
+        <h2><strong>About this project</strong></h2>
+        <p>
+          I created this project to develop my coding skills.
+          <br/>
+           I used HTML, CSS and JavaScript. This project is open-sourced on 
+          <a
+            href=""
+            title="github-link"
+            target="_blank"
+          ><i class="fa-brands fa-github github-link">.</i>
+          </a>
+        </p>
+      </div> 
+    </div>  
+  </footer>        
+</body>
+<script>
+    // Get Modal
+var modal = document.getElementById('myModal');
+    
+// Get pseudoelement to open Modal
+var btn = document.getElementById("sized");
+
+// Get the <span> element to close Modal
+var span = document.getElementsByClassName("close")[0];
+
+// When user clicks button, open Modal
+btn.onclick = function() {
+   modal.style.display = "block";
+   };
+
+// When user clicks Close (x), close Modal
+span.onclick = function() {
+   modal.style.display = "none";
+   };
+
+// When user clicks anywhere outside of the Modal, close Modal
+ window.onclick = function(event) {
+    if (event.target == modal) {
+       modal.style.display = "none";
+       }
+}
+</script>
+</html>
