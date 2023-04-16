@@ -300,6 +300,7 @@ li {
 footer {
     background-color: #43291b;
     color: #fdfbf8;
+    font-size: 18px;
 }
 
 .about-me, 
@@ -385,6 +386,12 @@ footer {
         letter-spacing: -0.05em;
     }
 
+    .modal-footer {
+        color:  #fdfbf8;
+        font-size: 14px;
+        margin: 10px 100px;
+    }
+
     .hero-title {
         font-size: 38px;
     }
@@ -420,7 +427,7 @@ footer {
 
     .grid-about img,
     .grid-menu img {
-        height: 150px;
+        height: 140px;
         width: 175px; 
     }
 
@@ -462,38 +469,8 @@ footer {
         padding: 0;
     }
 
-    .modal-footer {
-        margin: 10px 0;
-        padding: 10px 0;
-        color:  #fdfbf8;
-        font-size: 24px;
-        font-weight: 500;
-    }
-
-    .footer-contact {
-        color: #fdfbf8;
-        margin: 0 600px;
-    }
-
-    .address:hover, 
-    .tel:hover,
-    .address:focus, 
-    .tel:focus {
-        color:bisque;
-        font-weight: 700;
-    }
-
-    .facebook-link,
-    .insta-link {
-        font-size: 20px;
-    }
-
-    .facebook-link:hover,
-    .insta-link:hover,
-    .facebook-link:focus,
-    .insta-link:focus {
-        color: bisque;
-        font-size: 26px;
+    footer {
+        font-size: 18px; 
     }
 }
 </style>
@@ -521,8 +498,8 @@ footer {
         </ul>
       </div>
       <div class="modal-footer">
-        <p class="footer-contact"> 
-          KYIV
+        <p> 
+          <strong>KYIV</strong> 
           <br/> 
           <a class="address" href="https://www.google.com/maps/place/100+років+тому+вперед/@50.4572536,30.5174259,18.36z/data=!4m5!3m4!1s0x40d4cf8c87029aff:0x7cfd86b86402e618!8m2!3d50.4020355!4d30.5326906?shorturl=1">4 Volodymyrska Street</a>
           <br/>
@@ -702,26 +679,26 @@ footer {
         </div>
         <div class="col-6">
         <div class="grid grid-menu">
-        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/139/original/IMG_0366.JPG?1681512108" 
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/317/original/IMG_0389-3.jpg?1681638762" 
           height="200"
           width="300"
           alt="cocktail" />
-        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/140/original/IMG_0367.JPG?1681512188" 
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/315/original/IMG_0390.jpg?1681638526" 
           height="200"
           width="300"
-          alt="borsch" />
+          alt="cocktail" />
         <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/112/original/IMG_0343.jpg?1681508623" 
           height="250"
           width="200"
-          alt="main course" />
+          alt="borsch" />
          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/138/original/IMG_0363.JPG?1681512059" 
           height="250"
           width="400"
           alt="main course" />
-        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/129/original/IMG_0351.jpg?1681510491" 
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/140/original/IMG_0367.JPG?1681512188" 
           height="250"
           width="400"
-          alt="cocktail" />
+          alt="main course" />
         <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/117/original/IMG_0352.jpg?1681508961" 
           height="250"
           width="200"
@@ -732,7 +709,7 @@ footer {
     </div>
   </main>
   <footer> 
-    <div class="footer-contact">
+    <div>
       <p>
         <strong>KYIV</strong> 
           <br/> 
@@ -757,7 +734,8 @@ footer {
         <h2><strong>About me</strong></h2>
         <p>
           My name is Marianna Dei.
-          I designed &amp; built this landing page for SheCodes Challenge about my favorite Ukrainian restaraunt.
+          <br>
+          I designed &amp; built this landing page for SheCodes Challenge about my favorite Ukrainian restaurant.
         </p>
       </div>  
       <div class="col text-left about-landing-page">
